@@ -38,9 +38,9 @@ defmodule CymAppWeb.Router do
       pipe_through :browser
 
       live_dashboard "/dashboard", metrics: CymAppWeb.Telemetry
-      forward "/mailbox", Plug.Swoosh.MailboxPreview
+      # forward "/mailbox", Plug.Swoosh.MailboxPreview
 
-      live "/cym_app", CymAppWeb.CymAppLive, :index
+      live "/cym_app/:session_id", CymAppWeb.CymAppLive, :index
     end
   end
 end
